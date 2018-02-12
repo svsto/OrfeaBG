@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OrfeaBG.Web</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&subset=cyrillic:regular,regularitalic,bold,bolditalic,black,blackitalic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&subset=cyrillic:regular,regularitalic,bold,bolditalic,black,blackitalic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header id="main-header" role="banner">
+        <div id="web-header" class="hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="region region-header-menu">
+                            <section id="block-block-1" class="block block-block clearfix">
+                                <nav role="navigation">
+                                    <ul class="menu nav navbar-nav">
+                                        <li class="first leaf"><a asp-area="" asp-controller="Home" asp-action="Index">Начало</a></li>
+                                        <li class="leaf"><a asp-area="Pages" asp-controller="BasicPages" asp-action="Deteil" asp-route-id="2">За орфеа еоод</a></li>
+                                        <li class="leaf"><a asp-area="Product" asp-controller="Product" asp-action="All">Продукти</a></li>
+                                    </ul>
+                                    <div class="img-logo">
+                                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                                            <img src="http://orfea.bg/sites/all/themes/orfea/orfea-logo.png" alt="" title="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <ul class="menu nav navbar-nav">
+                                        <li class="leaf"><a asp-area="Recipe" asp-controller="Recipe" asp-action="All">Рецепти</a></li>
+                                        <li class="leaf"><a asp-area="Blog" asp-controller="Blog" asp-action="All">Блог</a></li>
+                                        <li class="last leaf"><a asp-area="" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                                    </ul>
+                                </nav>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-header" class="hidden-sm hidden-md hidden-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a class="logo" href="/" title="Висококачествени продукти от варива и зърнени култури">
+                            <img class="img-responsive" src="http://orfea.bg/sites/all/themes/orfea/orfea-logo.png" alt="logo Orfea">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                    <div class="col-xs-12">
+                        <div class="main-menu">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Menu</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-collapse collapse">
+                                    <nav role="navigation">
+                                        <ul class="menu nav navbar-nav">
+                                            <li class="first leaf"><a asp-area="" asp-controller="Home" asp-action="Index">Начало</a></li>
+                                            <li class="leaf"><a asp-area="Pages" asp-controller="BasicPages" asp-action="Deteil" asp-route-id="2">За орфеа еоод</a></li>
+                                            <li class="leaf"><a asp-area="Product" asp-controller="Product" asp-action="All">Продукти</a></li>
+                                            <li class="leaf"><a asp-area="Recipe" asp-controller="Recipe" asp-action="All">Рецепти</a></li>
+                                            <li class="leaf"><a asp-area="Blog" asp-controller="Blog" asp-action="All">Блог</a></li>
+                                            <li class="last leaf"><a asp-area="" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /main menu -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    @await Html.PartialAsync("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="gradient"></section>
+    <div class="body-content">
+        @RenderBody()
+    </div>
+    <footer id="footer">
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">
+                            <img class="img-responsive" src="http://orfea.bg/sites/all/themes/orfea/orfea-logo.png" alt="logo Orfea">
+                        </a>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul class="menu nav navbar-nav">
+                            <li class="first leaf"><a asp-area="" asp-controller="Home" asp-action="Index">Начало</a></li>
+                            <li class="leaf"><a asp-area="Pages" asp-controller="BasicPages" asp-action="Deteil" asp-route-id="2">За орфеа еоод</a></li>
+                            <li class="leaf"><a asp-area="Product" asp-controller="Product" asp-action="All">Продукти</a></li>
+                            <li class="leaf"><a asp-area="Recipe" asp-controller="Recipe" asp-action="All">Рецепти</a></li>
+                            <li class="leaf"><a asp-area="Blog" asp-controller="Blog" asp-action="All">Блог</a></li>
+                            <li class="last leaf"><a asp-area="" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

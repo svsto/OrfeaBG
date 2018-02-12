@@ -1,0 +1,25 @@
+﻿@model PartnerListingViewModel
+
+<section class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-center">Нашите Партньори</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var partner in Model.Partners)
+            {
+                <div class="col-xs-12 col-sm-4">
+                    <div class="partner text-center">
+                        <div class="img-box img-center">
+                            <a href="@partner.Link" target="_blank" rel="nofollow" title="@partner.Name">
+                                <img src="~/partners/@partner.LogoName" class="img-responsive" alt="@partner.Name"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+</section>

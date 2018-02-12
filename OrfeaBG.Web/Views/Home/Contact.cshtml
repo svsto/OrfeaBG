@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "За Контакти Орфеа Бг";
+}
+<section id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header">@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+</section>
+@Html.Partial("_ContactUs")
+@await Component.InvokeAsync("Partner")

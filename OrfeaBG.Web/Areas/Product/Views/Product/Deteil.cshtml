@@ -1,0 +1,42 @@
+﻿@model ProductListingServiceModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = Model.Title;
+}
+<section id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header">@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-container" role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                @if (!string.IsNullOrEmpty(Model.ImageName))
+                {
+                    <div class="img-box pull-left">
+                        <img src="~/products/@Model.ImageName" alt="@Model.Title" class="img-responsive" />
+                    </div>
+                }
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h3>@ViewData["Title"]</h3>
+                <div class="content">
+                    @Html.Raw(Model.Content)
+                </div>
+                <div class="region region-contacts">
+                    <h2 class="block-title">Свържете се с Нас</h2>
+                    <p class="c-email"><b>E-MAIL</b><br><a href="mailto:orfea2012@abv.bg" target="_blank">orfea2012@abv.bg</a></p>
+                    <p class="c-phone"><b>Обадете ни се</b><br><a href="tel:+359878126188">+ 359 878 12 61 88</a>0000</p>
+                    <p class="c-work"><b>Фамилия - ММ - 2011 ООД</b><br>Пакетиране и търговия с варива и зърнени култури</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("Product", 3)

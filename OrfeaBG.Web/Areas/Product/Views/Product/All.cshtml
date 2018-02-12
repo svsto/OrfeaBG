@@ -1,0 +1,68 @@
+﻿@model ProductListingViewModel
+@using System.Text.RegularExpressions
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Специално подбрани продукти под търговската марка „Orfea“";
+}
+<section id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header">@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-container" role="main">
+    <div class="container">
+        <div class="row">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="product text-center">
+                        <a asp-action="Deteil" asp-route-id="@product.Id">
+                            <div class="img-box">
+                                <img src="~/products/@product.ImageName" class="img-responsive" />
+                            </div>
+                            <h3>@product.Title</h3>
+                            @{
+                                product.Content = Regex.Replace(product.Content, "<.*?>", String.Empty);
+                                var contentLenght = product.Content.Length > 100 ? 100 : product.Content.Length;
+                            }
+                            <p>@Html.Raw(product.Content.Substring(0, contentLenght))</p>
+                        </a>
+                    </div>
+                </div>
+             }
+            @if (Model.TotalProducts > Model.Products.Count())
+            {
+                <ul class="pagination">
+                    <li class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)">
+                        <a asp-route-page="@Model.PreviousPage"
+                           aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    @{
+                        int totalPages = (int)Math.Ceiling((double)Model.TotalProducts / WebConstants.PageSize);
+                    }
+                    @for (int p = 0; p < totalPages; p++)
+                    {
+                        <li>
+                            <a asp-route-page="@(p+1)">
+                                @(p + 1)
+                            </a>
+                        </li>
+                    }
+                    <li class="@(Model.CurrentPage == Model.TotalPages ? "disabled" : string.Empty)">
+                        <a asp-route-page="@Model.NextPage"
+                           aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+             }
+            </div>
+      </div>
+</section>
+@Html.Partial("_ContactUs")

@@ -1,0 +1,88 @@
+﻿@model BlogListingViewModel
+@using System.Text.RegularExpressions
+@{
+    ViewData["Title"] = "All Blog Articles";
+}
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Add" class="btn btn-success">Add Articler</a></p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Post Date
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td>
+                    @article.PublishDate.ToShortDateString()
+                </td>
+                <td>
+                   @article.Title
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(article.ImageName))
+                    {
+                        <img src="/blog/@article.ImageName" width="65" class="img-responsive">
+                    }
+                </td>
+                <td>
+                    @{ 
+                        article.Content = Regex.Replace(article.Content, "<.*?>", String.Empty);
+                        var contentLenght = article.Content.Length > 100 ? 100 : article.Content.Length;
+                    }
+                    @Html.Raw(article.Content.Substring(0, contentLenght))
+               </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@article.Id">edit</a><br/>
+                    <a asp-action="Deteil" asp-route-id="@article.Id">view</a><br />
+                    <a asp-action="Delete" asp-route-id="@article.Id">delete</a><br />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.TotalArticles > Model.Articles.Count())
+{
+    <ul class="pagination">
+        <li class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)">
+            <a asp-route-page="@Model.PreviousPage"
+               aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        @{ 
+            int totalPages = (int)Math.Ceiling((double)Model.TotalArticles / WebConstants.PageSize);
+        }
+        @for (int p = 0; p < totalPages; p++)
+        {
+            <li>
+                <a asp-route-page="@(p+1)">
+                    @(p+1)
+                </a>
+            </li>
+        }
+        <li class="@(Model.CurrentPage == Model.TotalPages ? "disabled" : string.Empty)">
+            <a asp-route-page="@Model.NextPage"
+               aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+}

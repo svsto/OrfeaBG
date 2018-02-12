@@ -1,0 +1,38 @@
+﻿@model ProductListingViewModel
+@using System.Text.RegularExpressions
+
+
+<section id="Products-component">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-center">Последно Добавени Продукти</h2>
+            </div>
+        </div>
+            <div class="row">
+            @foreach (var product in Model.Products)
+            {
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="product text-center">
+                            <a asp-action="Deteil" asp-route-id="@product.Id">
+                                <div class="img-box">
+                                    <img src="~/products/@product.ImageName" class="img-responsive" />
+                                </div>
+                                <h3>@product.Title</h3>
+                                @{
+                                    product.Content = Regex.Replace(product.Content, "<.*?>", String.Empty);
+                                    var contentLenght = product.Content.Length > 100 ? 100 : product.Content.Length;
+                                }
+                                <p>@Html.Raw(product.Content.Substring(0, contentLenght))</p>
+                            </a>
+                        </div>
+                    </div>
+                                    }
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p><a asp-area="Product" asp-controller="Product" asp-action="All" class="all-product-link">Всички Продукти</a></p>
+                </div>
+            </div>
+        </div>
+</section>

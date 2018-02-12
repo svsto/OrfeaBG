@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AdminUserListingServiceModel>
+@{
+    ViewData["Title"] = "User Administration";
+}
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Add" class="btn btn-success">Add User</a></p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Action            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @user.Username
+                </td>
+                <td>
+                    @user.Email
+                </td>
+                <td>
+                    @foreach (var role in user.Roles)
+                    {
+                        @role.ToString()<br/>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@user.Id">edit user</a><br />
+                    <a asp-action="Delete" asp-route-id="@user.Id">delete user</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

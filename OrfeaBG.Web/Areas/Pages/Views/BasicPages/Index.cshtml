@@ -1,0 +1,44 @@
+﻿@model BasicPagesListingViewModel
+@using System.Text.RegularExpressions
+@{
+    ViewData["Title"] = "All Pages";
+}
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Add" class="btn btn-success">Add Page</a></p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var currentPage in Model.Pages)
+        {
+            <tr>
+                <td>
+                    @currentPage.Title
+                </td>
+                <td>
+                    @{
+                        currentPage.Content = Regex.Replace(currentPage.Content, "<.*?>", String.Empty);
+                        var contentLenght = currentPage.Content.Length > 100 ? 100 : currentPage.Content.Length;
+                    }
+                    @Html.Raw(currentPage.Content.Substring(0, contentLenght))
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@currentPage.Id">edit</a><br />
+                    <a asp-action="Deteil" asp-route-id="@currentPage.Id">view</a><br />
+                    <a asp-action="Delete" asp-route-id="@currentPage.Id">delete</a><br />
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model RecipeServiceModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = Model.Title;
+}
+
+<section id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header">@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-container" role="main">
+    <div class="container">
+        <div class="row">
+            @if (!string.IsNullOrEmpty(Model.ImageName))
+            {
+                <div class="img-box img-center">
+                    <img src="~/recipes/@Model.ImageName" alt="@Model.Title" class="img-responsive" />
+                </div>
+            }
+            <div class="content">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
+</section>
