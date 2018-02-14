@@ -1,0 +1,15 @@
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\OrfeaBG.Services.deps.json
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\OrfeaBG.Services.dll
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\OrfeaBG.Services.pdb
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\OrfeaBG.Data.dll
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\OrfeaBG.Data.pdb
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.csprojResolveAssemblyReference.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.csproj.CoreCompileInputs.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.AssemblyInfoInputs.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.AssemblyInfo.cs
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.dll
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Services\obj\Debug\netstandard2.0\OrfeaBG.Services.pdb
+C:\Users\Strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\Common.dll
+C:\Users\Strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\Strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\Strategy\source\repos\OrfeaBG\OrfeaBG.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.xml

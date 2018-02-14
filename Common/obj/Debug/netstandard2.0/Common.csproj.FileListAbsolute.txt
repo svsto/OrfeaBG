@@ -1,0 +1,9 @@
+C:\Users\Strategy\source\repos\OrfeaBG\Common\bin\Debug\netstandard2.0\Common.deps.json
+C:\Users\Strategy\source\repos\OrfeaBG\Common\bin\Debug\netstandard2.0\Common.dll
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+C:\Users\Strategy\source\repos\OrfeaBG\Common\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.csprojResolveAssemblyReference.cache
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.dll
+C:\Users\Strategy\source\repos\OrfeaBG\Common\obj\Debug\netstandard2.0\Common.pdb

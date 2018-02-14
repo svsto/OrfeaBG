@@ -1,0 +1,9 @@
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\bin\Debug\netstandard2.0\OrfeaBG.Data.deps.json
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\bin\Debug\netstandard2.0\OrfeaBG.Data.dll
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.csprojResolveAssemblyReference.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.csproj.CoreCompileInputs.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.AssemblyInfoInputs.cache
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.AssemblyInfo.cs
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\bin\Debug\netstandard2.0\OrfeaBG.Data.pdb
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.dll
+c:\users\strategy\source\repos\OrfeaBG\OrfeaBG.Data\obj\Debug\netstandard2.0\OrfeaBG.Data.pdb
